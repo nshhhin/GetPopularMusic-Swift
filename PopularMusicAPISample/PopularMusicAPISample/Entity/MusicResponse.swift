@@ -14,7 +14,7 @@ struct MusicsResponse: ResponseEntity {
         self.musics = jsonData.compactMap({ data in
             let id = data["id"].stringValue
             let artistName = data["artistName"].stringValue
-            let title = data["title"].stringValue
+            let title = data["name"].stringValue
             let artworkUrl100 = data["artworkUrl100"].stringValue
 
             return Music(id: id, artistName: artistName, name: title, artworkUrl100: artworkUrl100)

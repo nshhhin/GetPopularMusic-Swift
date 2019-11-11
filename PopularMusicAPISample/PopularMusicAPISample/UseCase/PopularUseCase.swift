@@ -8,7 +8,7 @@ final class PopularUseCase {
 //    private let favoriteMusicDao = FavoriteMusicDAO()
 
     func fetchMusic() -> Single<MusicsResponse> {
-        return api.get(path: Config.RSS_URL, request: nil)
+        return api.get(path: "", request: nil)
     }
 
 //    func loadFavoriteMusic() -> Single<[Music]> {

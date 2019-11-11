@@ -17,49 +17,42 @@ class PopularViewController: UIViewController {
     @IBOutlet weak var musicCollectionV: UICollectionView! {
         didSet {
             musicCollectionV.delegate = self
-            musicCollectionV.dataSource = self
+            musicCollectionV.dataSource = dataSource
             musicCollectionV.register(cellType: MusicCell.self)
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showPopularData()
+    }
 
+    func showPopularData(){
         viewModel.fetchMusicData()
-                .asDriver(onErrorRecover: { [weak self] error in
-                    return Driver.empty()
-                }).drive(onNext: { [weak self] response in
-                    self?.dataSource.setMusicData(response)
-                    self?.musicCollectionV.reloadData()
-                }).disposed(by: disposeBag)
+        .asDriver(onErrorRecover: { [weak self] error in
+            print(error)
+            return Driver.empty()
+        }).drive(onNext: { [weak self] response in
+            print(response)
+            self?.dataSource.setMusicData(response)
+            self?.musicCollectionV.reloadData()
+        }).disposed(by: disposeBag)
     }
 }
 
-extension PopularViewController: UICollectionViewDelegate {
+extension PopularViewController: MusicCellDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
     }
-}
 
-extension PopularViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return musics.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let music = musics[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MusicCell", for: indexPath) as! MusicCell
-        cell.titleLabel.text = music.name
-        cell.artistLabel.text = music.artistName
-
-        if let url = URL(string: music.artworkUrl100) {
-            cell.artworkV = UIImageView(image: Image(named: "image"))
-//            cell.artworkV.af_setImage(withURL: url, placeholderImage: Image(named: "image"))
-
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let musicCell = cell as? MusicCell else {
+            return
         }
-        return cell
+        musicCell.delegate = self
     }
 }
+
 
 extension PopularViewController: UICollectionViewDelegateFlowLayout {
 
