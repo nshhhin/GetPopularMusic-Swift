@@ -1,6 +1,5 @@
 # GetPopularMusic-Swift
-https://rss.itunes.apple.com/ja-jp のRSSから
-最新の人曲を取得するSwiftプログラム
+https://rss.itunes.apple.com/ja-jp のRSSから最新の人曲を取得するSwiftプログラム
 
 ## Get Started
 1. `pod install`
