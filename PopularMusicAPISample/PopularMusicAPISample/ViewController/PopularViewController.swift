@@ -4,8 +4,13 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 import RxSwift
+import RxCocoa
 
 class PopularViewController: UIViewController {
+
+    private let viewModel = PopularViewModel()
+    private let disposeBag = DisposeBag()
+    private let dataSource = PopularCollectionViewDataSource()
 
     var musics: [Music] = []
     
@@ -20,28 +25,13 @@ class PopularViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Alamofire.request(Config.RSS_URL).responseJSON(completionHandler: { response in
-            guard let object = response.result.value else {
-                return
-            }
-
-            let jsonStr = JSON(object).rawString()!
-
-//            print(jsonStr)
-            do {
-                let popularMusicRSS = try? JSONDecoder().decode(
-                    PopularMusicRSS.self, from: jsonStr.data(using: .utf8)!
-                )
-
-                for result in popularMusicRSS!.feed.results {
-                    self.musics.append(result)
-                }
-                self.musicCollectionV.reloadData()
-            }
-            catch {
-
-            }
-        })
+        viewModel.fetchMusicData()
+                .asDriver(onErrorRecover: { [weak self] error in
+                    return Driver.empty()
+                }).drive(onNext: { [weak self] response in
+                    self?.dataSource.setMusicData(response)
+                    self?.musicCollectionV.reloadData()
+                }).disposed(by: disposeBag)
     }
 }
 
@@ -88,14 +78,4 @@ struct PopularMusicRSS: Codable {
 
 struct PopularMusicFeed: Codable {
     var results: [Music]
-}
-
-class Music: Codable {
-    var artistName: String!
-    var name: String!
-    var artworkUrl100: String!
-
-    func print(){
-        Swift.print(artistName, name, artworkUrl100)
-    }
 }

@@ -13,9 +13,11 @@ class MusicCell: UICollectionViewCell {
         artworkV = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     }
 
-    func setImage(url: String){
-        if let artworkV = self.artworkV {
-            artworkV.af_setImage(withURL: URL(string: url)!)
+    func setData(music: Music) {
+        if let url = URL(string: music.artworkUrl100) {
+            artworkV.af_setImage(withURL: url)
         }
+        titleLabel.text = music.name
+        artistLabel.text = music.artistName
     }
 }

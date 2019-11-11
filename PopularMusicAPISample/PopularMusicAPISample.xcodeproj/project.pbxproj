@@ -25,6 +25,9 @@
 		F35F1A2723784EB200216C02 /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35F1A2623784EB200216C02 /* MusicCell.xib */; };
 		F35F1A29237856CB00216C02 /* UICollectionView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F1A28237856CB00216C02 /* UICollectionView+Ex.swift */; };
 		F35F1A2B237856DD00216C02 /* NSObject+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F1A2A237856DD00216C02 /* NSObject+Ex.swift */; };
+		F3C30C8323790C7A0017D5E3 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C30C8223790C7A0017D5E3 /* Music.swift */; };
+		F3C30C8523790D2B0017D5E3 /* MusicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C30C8423790D2B0017D5E3 /* MusicResponse.swift */; };
+		F3C30C872379186F0017D5E3 /* PopularCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C30C862379186F0017D5E3 /* PopularCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		F35F1A2623784EB200216C02 /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
 		F35F1A28237856CB00216C02 /* UICollectionView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ex.swift"; sourceTree = "<group>"; };
 		F35F1A2A237856DD00216C02 /* NSObject+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ex.swift"; sourceTree = "<group>"; };
+		F3C30C8223790C7A0017D5E3 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		F3C30C8423790D2B0017D5E3 /* MusicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicResponse.swift; sourceTree = "<group>"; };
+		F3C30C862379186F0017D5E3 /* PopularCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 				F35F1A112378373000216C02 /* Main.storyboard */,
 				F35F1A2423784E7D00216C02 /* MusicCell.swift */,
 				F35F1A2623784EB200216C02 /* MusicCell.xib */,
+				F3C30C862379186F0017D5E3 /* PopularCollectionViewDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			children = (
 				F34E3278237900EC000A4C72 /* RequestEntity.swift */,
 				F34E3277237900EC000A4C72 /* ResponseEntity.swift */,
+				F3C30C8423790D2B0017D5E3 /* MusicResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 				F35F1A0B2378373000216C02 /* AppDelegate.swift */,
 				F35F1A0D2378373000216C02 /* SceneDelegate.swift */,
 				F35F1A22237848BE00216C02 /* Config.swift */,
+				F3C30C8123790C6B0017D5E3 /* Model */,
 				F34E326C2378F9B8000A4C72 /* ViewController */,
 				F34E326F2378F9F7000A4C72 /* View */,
 				F34E326B2378F9AE000A4C72 /* ViewModel */,
@@ -170,6 +179,14 @@
 				F35F1A142378373000216C02 /* PopularMusicAPISample.xcdatamodeld */,
 			);
 			path = PopularMusicAPISample;
+			sourceTree = "<group>";
+		};
+		F3C30C8123790C6B0017D5E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3C30C8223790C7A0017D5E3 /* Music.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,12 +310,15 @@
 				F35F1A102378373000216C02 /* PopularViewController.swift in Sources */,
 				F34E3279237900EC000A4C72 /* ResponseEntity.swift in Sources */,
 				F35F1A29237856CB00216C02 /* UICollectionView+Ex.swift in Sources */,
+				F3C30C872379186F0017D5E3 /* PopularCollectionViewDataSource.swift in Sources */,
 				F35F1A0C2378373000216C02 /* AppDelegate.swift in Sources */,
 				F35F1A23237848BE00216C02 /* Config.swift in Sources */,
 				F35F1A2B237856DD00216C02 /* NSObject+Ex.swift in Sources */,
 				F35F1A162378373000216C02 /* PopularMusicAPISample.xcdatamodeld in Sources */,
+				F3C30C8523790D2B0017D5E3 /* MusicResponse.swift in Sources */,
 				F34E32732378FE81000A4C72 /* PopularUseCase.swift in Sources */,
 				F35F1A0E2378373000216C02 /* SceneDelegate.swift in Sources */,
+				F3C30C8323790C7A0017D5E3 /* Music.swift in Sources */,
 				F35F1A2523784E7D00216C02 /* MusicCell.swift in Sources */,
 				F34E327A237900EC000A4C72 /* RequestEntity.swift in Sources */,
 			);

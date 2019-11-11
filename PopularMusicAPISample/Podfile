@@ -10,5 +10,6 @@ target 'PopularMusicAPISample' do
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'RxSwift'
+  pod 'RxCocoa'
 
 end
