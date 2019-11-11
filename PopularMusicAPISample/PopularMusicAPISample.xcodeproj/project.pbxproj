@@ -11,6 +11,8 @@
 		F34E32712378FE52000A4C72 /* PopularViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E32702378FE52000A4C72 /* PopularViewModel.swift */; };
 		F34E32732378FE81000A4C72 /* PopularUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E32722378FE81000A4C72 /* PopularUseCase.swift */; };
 		F34E32752378FEB4000A4C72 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E32742378FEB4000A4C72 /* ApiClient.swift */; };
+		F34E3279237900EC000A4C72 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E3277237900EC000A4C72 /* ResponseEntity.swift */; };
+		F34E327A237900EC000A4C72 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E3278237900EC000A4C72 /* RequestEntity.swift */; };
 		F35F1A0C2378373000216C02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F1A0B2378373000216C02 /* AppDelegate.swift */; };
 		F35F1A0E2378373000216C02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F1A0D2378373000216C02 /* SceneDelegate.swift */; };
 		F35F1A102378373000216C02 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F1A0F2378373000216C02 /* PopularViewController.swift */; };
@@ -32,6 +34,8 @@
 		F34E32702378FE52000A4C72 /* PopularViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewModel.swift; sourceTree = "<group>"; };
 		F34E32722378FE81000A4C72 /* PopularUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularUseCase.swift; sourceTree = "<group>"; };
 		F34E32742378FEB4000A4C72 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		F34E3277237900EC000A4C72 /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		F34E3278237900EC000A4C72 /* RequestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEntity.swift; sourceTree = "<group>"; };
 		F35F1A082378373000216C02 /* PopularMusicAPISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularMusicAPISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35F1A0B2378373000216C02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F35F1A0D2378373000216C02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F34E3276237900D9000A4C72 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F34E3278237900EC000A4C72 /* RequestEntity.swift */,
+				F34E3277237900EC000A4C72 /* ResponseEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		F35F19FF2378373000216C02 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 				F34E326F2378F9F7000A4C72 /* View */,
 				F34E326B2378F9AE000A4C72 /* ViewModel */,
 				F34E326D2378F9C1000A4C72 /* UseCase */,
+				F34E3276237900D9000A4C72 /* Entity */,
 				F34E326E2378F9E3000A4C72 /* Utility */,
 				F35F1A172378373400216C02 /* Assets.xcassets */,
 				F35F1A192378373400216C02 /* LaunchScreen.storyboard */,
@@ -277,6 +291,7 @@
 				F34E32752378FEB4000A4C72 /* ApiClient.swift in Sources */,
 				F34E32712378FE52000A4C72 /* PopularViewModel.swift in Sources */,
 				F35F1A102378373000216C02 /* PopularViewController.swift in Sources */,
+				F34E3279237900EC000A4C72 /* ResponseEntity.swift in Sources */,
 				F35F1A29237856CB00216C02 /* UICollectionView+Ex.swift in Sources */,
 				F35F1A0C2378373000216C02 /* AppDelegate.swift in Sources */,
 				F35F1A23237848BE00216C02 /* Config.swift in Sources */,
@@ -285,6 +300,7 @@
 				F34E32732378FE81000A4C72 /* PopularUseCase.swift in Sources */,
 				F35F1A0E2378373000216C02 /* SceneDelegate.swift in Sources */,
 				F35F1A2523784E7D00216C02 /* MusicCell.swift in Sources */,
+				F34E327A237900EC000A4C72 /* RequestEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
